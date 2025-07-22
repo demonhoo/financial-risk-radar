@@ -31,22 +31,11 @@
     <div id="chart"></div>
 
     <script>
-        let data = [];
+        
         let allTimes = [];
         let allRegions = [];
 
-        fetch('data.json')
-        .then(response => response.json())
-        .then(json => {
-            data = json;
-            allTimes = Array.from(new Set(data.map(d => d.Time))).sort((a, b) => {
-                const [ay, aq] = a.split('_Q'); const [by, bq] = b.split('_Q');
-                return parseInt(ay)*4 + parseInt(aq) - (parseInt(by)*4 + parseInt(bq));
-            });
-            allRegions = Array.from(new Set(data.map(d => d.Region)));
-
-            populateControls();
-            updateChart();
+        
         });
 
         function populateControls() {
