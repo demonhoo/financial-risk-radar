@@ -63,10 +63,12 @@
             slider.value = allTimes.length - 1;
             document.getElementById('quarterLabel').innerText = allTimes[slider.value];
 
-            slider.oninput = () => {
-                document.getElementById('quarterLabel').innerText = allTimes[slider.value];
-                updateChart();
-            };
+            
+    slider.oninput = () => {
+        document.getElementById('quarterLabel').innerText = allTimes[slider.value];
+        updateChart();
+    };
+    ;
             regionSelect.onchange = updateChart;
         }
 
